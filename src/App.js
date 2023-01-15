@@ -1,3 +1,5 @@
 const App = () => {
-  return <div>App</div>;
+  return <div className="">navbar attendance click-full attendence</div>;
 };
+
+export default App;
