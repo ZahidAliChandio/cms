@@ -1,6 +1,6 @@
 import React from "react";
 
-const Add_dashboard = () => {
+const AddDashboard = () => {
   return (
     <div id="wrapper">
       <div id="leftsection">
@@ -82,4 +82,4 @@ const Add_dashboard = () => {
   );
 };
 
-export default Add_dashboard;
+export default AddDashboard;

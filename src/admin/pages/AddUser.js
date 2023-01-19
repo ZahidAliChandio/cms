@@ -1,6 +1,6 @@
 import React from "react";
 
-const Add_user = () => {
+const AddUser = () => {
   return (
     <div id="wrapper">
       <div id="loginpanel">
@@ -37,4 +37,4 @@ const Add_user = () => {
   );
 };
 
-export default Add_user;
+export default AddUser;
