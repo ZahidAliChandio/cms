@@ -1,6 +1,6 @@
 import React from "react";
 
-const Faculty_Login = () => {
+const Login = () => {
   return (
     <div id="wrapper">
       <div id="loginpanel">
@@ -38,4 +38,4 @@ const Faculty_Login = () => {
   );
 };
 
-export default Faculty_Login;
+export default Login;

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Student_courses = () => {
+const Courses = () => {
   return (
     <div>
       <h1>Department of Computer Software Engineering, MCS</h1>
@@ -67,4 +67,4 @@ const Student_courses = () => {
   );
 };
 
-export default Student_courses;
+export default Courses;

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Student_Dashboard = () => {
+const Dashboard = () => {
   return (
 //     <!DOCTYPE html>
 // <html lang="en">
@@ -23,4 +23,4 @@ const Student_Dashboard = () => {
   )
 }
 
-export default Student_Dashboard
+export default Dashboard;

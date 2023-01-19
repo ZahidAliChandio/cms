@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Faculty_attd_std_det = () => {
+const Attd_std_det = () => {
   return (
     <div id="tablediv">
   <h3>Course Name</h3>                
@@ -119,4 +119,4 @@ const Faculty_attd_std_det = () => {
   )
 }
 
-export default Faculty_attd_std_det
+export default Attd_std_det;

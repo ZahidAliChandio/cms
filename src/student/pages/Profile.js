@@ -1,6 +1,6 @@
 import React from "react";
 
-const Student_profile = () => {
+const Profile = () => {
   return (
     <div>
       <h1>Department of Computer Software Engineering, MCS</h1>
@@ -86,4 +86,4 @@ const Student_profile = () => {
   );
 };
 
-export default Student_profile;
+export default Profile;

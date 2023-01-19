@@ -1,6 +1,6 @@
 import React from "react";
 
-const Facult_attenance = () => {
+const Attendance = () => {
   return (
     <div className="faculty_attendance3" id="tablediv">
       <h3>Course Name</h3>
@@ -34,4 +34,4 @@ const Facult_attenance = () => {
   );
 };
 
-export default Facult_attenance;
+export default Attendance;
