@@ -6,8 +6,9 @@ import NavLinks from "./NavLinks";
 import SideDrawer from "./SideDrawer";
 import Backdrop from "../UI/Backdrop";
 
-const MainNavigation = (props) => {
+const MainNavigation = ({ headerLeft, name, profileImage, faculty }) => {
   const [drawerIsOpen, setDrawerIsOpen] = useState(false);
+  const [studentClicked, setStudentClicked] = useState(true);
 
   const openDrawerHandler = () => {
     setDrawerIsOpen(true);
@@ -34,15 +35,27 @@ const MainNavigation = (props) => {
           <span className="block w-7 h-[2px] bg-white"></span>
           <span className="block w-7 h-[2px] bg-white"></span>
         </button>
-        <h1 className="main-navigation__title text-white">
-          <Link to="/" className="text-white">
-            {" "}
-            Students
-          </Link>
+        <h1 className="main-navigation__title text-white flex gap-6 font-semibold">
+          {!faculty ||
+            (studentClicked &&
+              headerLeft.map((headerItem, index) => (
+                <Link to={headerItem.link} className="text-white" key={index}>
+                  {" "}
+                  <span>{headerItem.value}</span>
+                </Link>
+              )))}
+          {!studentClicked &&
+            faculty.map((headerItem, index) => (
+              <Link to={headerItem.link} className="text-white" key={index}>
+                <span>{headerItem.value}</span>
+              </Link>
+            ))}
         </h1>
-        <nav className="main-navigation__header-nav hidden md:block">
-          <NavLinks />
-        </nav>
+        {faculty && (
+          <nav className="main-navigation__header-nav hidden md:block">
+            <NavLinks setStudentClicked={setStudentClicked} />
+          </nav>
+        )}
       </MainHeader>
     </Fragment>
   );

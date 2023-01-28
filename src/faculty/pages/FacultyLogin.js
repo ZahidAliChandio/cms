@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Login() {
+const FacultyLogin = () => {
   const [Name, setName] = useState("");
   const [Password, setPassword] = useState("");
 
@@ -19,7 +19,7 @@ function Login() {
         <div className="login_container flex flex-col items-center w-full">
           <div className="flex flex-col justify gap-12 w-11/12 sm:w-3/4 md:w-1/2 lg:w-[40%]">
             <div className="flex text-4xl font-sans-serif font-semibold text-[color:var(--primary-color)] mx-auto">
-              <p className="login_heading text-xl">Admin</p>
+              <p className="login_heading text-xl">Faculty</p>
             </div>
             <div className="login_card relative px-10 border-t-4 border-[color:var(--primary-color)] border  rounded-tr-none rounded-sm form-signin-logo pt-12 pb-6 box-shadow">
               <form
@@ -87,6 +87,6 @@ function Login() {
       </main>
     </React.Fragment>
   );
-}
+};
 
-export default Login;
+export default FacultyLogin;
