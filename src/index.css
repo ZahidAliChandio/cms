@@ -5,3 +5,6 @@
 :root {
   --primary-color: #097ff5;
 }
+.box-shadow {
+  box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.3);
+}

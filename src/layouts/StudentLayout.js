@@ -9,13 +9,15 @@ const StudentLayout = () => {
       <Navigation
         headerLeft={[
           { value: "Dashboard", link: "" },
-          { value: "Profile", link: "" },
-          { value: "Result", link: "" },
+          { value: "Profile", link: "/student/profile" },
+          { value: "Result", link: "/student/results" },
           { value: "Attendence", link: "" },
-          { value: "Course", link: "" },
+          { value: "Course", link: "/student/courses" },
         ]}
       />
-      <Outlet />
+      <div className="mt-12 p-8">
+        <Outlet />
+      </div>
     </Fragment>
   );
 };

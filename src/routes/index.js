@@ -1,12 +1,24 @@
 import { useRoutes } from "react-router-dom";
 
 import AdminLogin from "../admin/pages/AdminLogin";
-import StudentLogin from "../student/pages/StudentLogin";
-import FacultyLogin from "../faculty/pages/FacultyLogin";
-import AdminDashboard from "../admin/pages/AdminDashboard";
+import StudentLogin from "../student/pages/StudentLogin/StudentLogin";
+import FacultyLogin from "../faculty/pages/FacultyLogin/FacultyLogin";
+
 import AdminLayout from "../layouts/AdminLayout";
+import AdminDashboard from "../admin/pages/AdminDashboard";
 import StudentLayout from "../layouts/StudentLayout";
+import StudentDashboard from "../student/pages/StudentDashboard/StudentDashboard";
 import FacultyLayout from "../layouts/FacultyLayout";
+import FacultyDashboard from "../faculty/pages/FacultyDashboard/FacultyDashboard";
+import FacultyCourses from "../faculty/pages/FacultyCourses/FacultyCourses";
+import Attendance from "../faculty/pages/FacultyAttendance/Attendance";
+import AttendanceDetails from "../faculty/pages/FacultyAttendance/AttendanceDetails ";
+import Results from "../faculty/pages/FacultyResults/Results";
+import ResultDetails from "../faculty/pages/FacultyResults/ResultDetails";
+import FacultyProfile from "../faculty/pages/FacultyProfile/FacultyProfile";
+import StudentResults from "../student/pages/StudentResults/StudentResults";
+import StudentProfile from "../student/pages/StudentProfile/StudentProfile";
+import StudentCourses from "../student/pages/StudentCourses/StudentCourses";
 
 export default function Router() {
   return useRoutes([
@@ -24,8 +36,8 @@ export default function Router() {
       element: <StudentLayout />,
       children: [
         {
-          // path: "addFaculty",
-          // element: <addFaculty />,
+          path: "dashboard",
+          element: <StudentDashboard />,
         },
         {
           path: "attendence",
@@ -33,11 +45,15 @@ export default function Router() {
         },
         {
           path: "results",
-          //   element: <updateFaclulty />,
+          element: <StudentResults />,
         },
         {
           path: "profile",
-          //   element: <updateFaclulty />,
+          element: <StudentProfile />,
+        },
+        {
+          path: "courses",
+          element: <StudentCourses />,
         },
       ],
     },
@@ -56,23 +72,36 @@ export default function Router() {
       children: [
         {
           path: "dashboard",
-          //   element: <addStudent />,
+          element: <FacultyDashboard />,
         },
         {
-          path: "home",
-          //   element: <addStudent />,
+          path: "attendance",
+          element: <Attendance />,
+        },
+        {
+          path: "attendance/details",
+          element: <AttendanceDetails />,
         },
         {
           path: "profile",
-          //   element: <addStudent />,
+          element: <FacultyProfile />,
         },
         {
           path: "results",
-          //   element: <addStudent />,
+          element: <Results />,
+        },
+        {
+          path: "results",
+          children: [
+            {
+              path: "details",
+              element: <ResultDetails />,
+            },
+          ],
         },
         {
           path: "courses",
-          //   element: <addStudent />,
+          element: <FacultyCourses />,
         },
       ],
     },

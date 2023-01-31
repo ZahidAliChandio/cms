@@ -1,12 +1,24 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
+import axios from "axios";
 
 const FacultyLogin = () => {
   const [Name, setName] = useState("");
   const [Password, setPassword] = useState("");
 
+  const navigate = useNavigate();
+
   const loginOperator = (e) => {
     e.preventDefault();
-    // Authentication to be added
+    axios
+      .post(`http://localhost:4000/faculty/login`)
+      .then((res1) => {
+        // localStorage.setItem("byoutakToken", res1.data.token);
+        toast.success("Authentication Successful");
+        navigate("/faculty/dashboard", { state: Name });
+      })
+      .catch((err) => toast.error("Not Authorized"));
   };
 
   return (
@@ -36,6 +48,7 @@ const FacultyLogin = () => {
                     id="floating_email"
                     className="block pb-2 pt-5 px-2 w-full text-[#212020] bg-transparent border-transparent border border-b border-b-gray-600 appearance-none focus:outline-none focus:border-b-2 focus:border-[color:var(--primary-color)] focus:ring-0 peer text-xs font-semibold"
                     placeholder=" "
+                    autoComplete="off"
                     required
                   />
                   <label
@@ -59,6 +72,7 @@ const FacultyLogin = () => {
                     id="floating_password"
                     className="block pb-2 pt-5 px-2 w-full text-[#212020] border-transparent bg-transparent border border-b border-b-gray-600 appearance-none outline-none focus:ring-0 focus:border-[color:var(--primary-color)] focus:border-b-2 peer text-xs font-semibold"
                     placeholder=" "
+                    autoComplete="off"
                     required
                   />
                   <label

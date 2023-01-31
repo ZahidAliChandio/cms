@@ -1,12 +1,24 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
+import axios from "axios";
 
 const StudentLogin = () => {
   const [Name, setName] = useState("");
   const [Password, setPassword] = useState("");
 
+  const navigate = useNavigate();
+
   const loginOperator = (e) => {
     e.preventDefault();
-    // Authentication to be added
+    axios
+      .post(`http://localhost:4000/student/login`)
+      .then((res1) => {
+        // localStorage.setItem("byoutakToken", res1.data.token);
+        toast.success("Authentication Successful");
+        navigate("/student/dashboard", { state: Name });
+      })
+      .catch((err) => toast.error("Not Authorized"));
   };
 
   return (

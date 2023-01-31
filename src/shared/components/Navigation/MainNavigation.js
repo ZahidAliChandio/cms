@@ -6,7 +6,7 @@ import NavLinks from "./NavLinks";
 import SideDrawer from "./SideDrawer";
 import Backdrop from "../UI/Backdrop";
 
-const MainNavigation = ({ headerLeft, name, profileImage, faculty }) => {
+const MainNavigation = ({ headerLeft, faculty }) => {
   const [drawerIsOpen, setDrawerIsOpen] = useState(false);
   const [studentClicked, setStudentClicked] = useState(true);
 
@@ -36,15 +36,15 @@ const MainNavigation = ({ headerLeft, name, profileImage, faculty }) => {
           <span className="block w-7 h-[2px] bg-white"></span>
         </button>
         <h1 className="main-navigation__title text-white flex gap-6 font-semibold">
-          {!faculty ||
-            (studentClicked &&
-              headerLeft.map((headerItem, index) => (
-                <Link to={headerItem.link} className="text-white" key={index}>
-                  {" "}
-                  <span>{headerItem.value}</span>
-                </Link>
-              )))}
-          {!studentClicked &&
+          {(!faculty || studentClicked) &&
+            headerLeft.map((headerItem, index) => (
+              <Link to={headerItem.link} className="text-white" key={index}>
+                {" "}
+                <span>{headerItem.value}</span>
+              </Link>
+            ))}
+          {faculty &&
+            !studentClicked &&
             faculty.map((headerItem, index) => (
               <Link to={headerItem.link} className="text-white" key={index}>
                 <span>{headerItem.value}</span>
