@@ -12,13 +12,22 @@ const StudentLogin = () => {
   const loginOperator = (e) => {
     e.preventDefault();
     axios
-      .post(`http://localhost:4000/student/login`)
-      .then((res1) => {
-        localStorage.setItem("userId", Name);
-        toast.success("Authentication Successful");
-        navigate("/student/dashboard");
+      .post(`http://localhost:4000/student/login`, {
+        userId: Name,
+        password: Password,
       })
-      .catch((err) => toast.error("Not Authorized"));
+      .then((res) => {
+        if (res.statusText === "OK") {
+          localStorage.setItem("userId", Name);
+          toast.success("Authentication Successful");
+          navigate("/student/dashboard");
+        } else {
+          console.log(res);
+        }
+      })
+      .catch((err) => {
+        toast.error("Not Authorized");
+      });
   };
 
   return (
