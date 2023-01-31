@@ -19,6 +19,7 @@ import FacultyProfile from "../faculty/pages/FacultyProfile/FacultyProfile";
 import StudentResults from "../student/pages/StudentResults/StudentResults";
 import StudentProfile from "../student/pages/StudentProfile/StudentProfile";
 import StudentCourses from "../student/pages/StudentCourses/StudentCourses";
+import StudentAttendance from "../student/pages/StudentAttendance/StudentAttendance";
 
 export default function Router() {
   return useRoutes([
@@ -40,8 +41,8 @@ export default function Router() {
           element: <StudentDashboard />,
         },
         {
-          path: "attendence",
-          //   element: <viewFaculties />,
+          path: "attendance",
+          element: <StudentAttendance />,
         },
         {
           path: "results",

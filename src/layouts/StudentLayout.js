@@ -11,7 +11,7 @@ const StudentLayout = () => {
           { value: "Dashboard", link: "" },
           { value: "Profile", link: "/student/profile" },
           { value: "Result", link: "/student/results" },
-          { value: "Attendence", link: "" },
+          { value: "Attendence", link: "/student/attendance" },
           { value: "Course", link: "/student/courses" },
         ]}
       />

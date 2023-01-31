@@ -9,6 +9,9 @@ const Profile = ({ data }) => {
       <div className="flex justify-between flex-col-reverse md:flex-row gap-8">
         <div className="w-full">
           <UserDetails title="Full Name" value={data.FullName} edit={true} />
+          {data.Course && (
+            <UserDetails title="Course" value={data.Course} edit={true} />
+          )}
           <UserDetails
             title="Gender"
             checkBoxes={true}
@@ -30,17 +33,20 @@ const Profile = ({ data }) => {
             <img
               src={ProfilePicture}
               alt="Profile"
-              className="w-[169px] h-[169px] rounded-full"
+              className="w-[192px] h-[192px] rounded-full"
             />
           </div>
           <div className="flex gap-4">
             <button
-              className="font-bold text-green-700 underline"
+              className="text-lg font-bold text-[color:var(--primary-color)] underline"
               type="submit"
             >
               Update
             </button>
-            <button className="font-bold text-gray-400 underline" type="clear">
+            <button
+              className="text-lg font-bold text-gray-400 underline"
+              type="clear"
+            >
               Remove
             </button>
           </div>
