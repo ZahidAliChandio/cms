@@ -8,11 +8,11 @@ const StudentLayout = () => {
     <Fragment>
       <Navigation
         headerLeft={[
-          { value: "Dashboard", link: "" },
+          { value: "Dashboard", link: "/student/dashboard" },
           { value: "Profile", link: "/student/profile" },
           { value: "Result", link: "/student/results" },
           { value: "Attendence", link: "/student/attendance" },
-          { value: "Course", link: "/student/courses" },
+          { value: "Courses", link: "/student/courses" },
         ]}
       />
       <div className="mt-12 p-8">

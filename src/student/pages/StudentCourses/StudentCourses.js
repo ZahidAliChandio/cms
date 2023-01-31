@@ -10,7 +10,7 @@ const StudentCourses = () => {
             <span>Software Engineering</span>
             <span>CS-330</span>
           </div>
-          <span className="px-3 py-2">Credits: 3.0</span>
+          <span className="px-3 py-2 font-semibold">Credits: 3.0</span>
         </div>
       </Card>
     </div>
