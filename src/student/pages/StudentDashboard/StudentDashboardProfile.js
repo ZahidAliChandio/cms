@@ -1,6 +1,6 @@
 import ProfilePicture from "../../../static/images/profile.jpg";
 
-const StudentDashboardProfile = () => {
+const StudentDashboardProfile = ({ data }) => {
   return (
     <div>
       <div className="relative flex gap-12 items-center border-b pb-6 my-4">
@@ -8,25 +8,27 @@ const StudentDashboardProfile = () => {
           <img src={ProfilePicture} alt="profile" className="object-fill" />
         </div>
         <div className="flex flex-col gap-1 text-[0.95rem]">
-          <span className="text-2xl text-bold">Zahid Ali</span>
+          <span className="text-2xl text-bold">{data.FullName}</span>
           <span className="text-lg text-semibold text-gray-500">
-            00000346701
+            {data.cmsId}
           </span>
-          <span className="text-semibold text-gray-500">
-            Military College Of Signals (MCS)
-          </span>
+          <span className="text-semibold text-gray-500">{data.college}</span>
         </div>
         <div className="flex flex-col gap-2 items-baseline text-[0.95rem]">
-          <span className="text-semibold text-gray-500">Completed Cr: 80</span>
-          <span className="text-semibold text-gray-500">Total Cr: 80</span>
           <span className="text-semibold text-gray-500">
-            In Progress Cr: 80
+            Completed Cr: {data.completedCr}
+          </span>
+          <span className="text-semibold text-gray-500">
+            Total Cr: {data.totalCr}
+          </span>
+          <span className="text-semibold text-gray-500">
+            In Progress Cr: {data.inProgressCr}
           </span>
         </div>
         <div className="flex flex-col gap-2 justify-start text-[0.95rem]">
-          <span className="text-semibold text-gray-500">CGPA: 3.6</span>
+          <span className="text-semibold text-gray-500">CGPA: {data.cgpa}</span>
           <span className="text-semibold text-gray-500">
-            Semester: 5th Semester
+            Semester: {data.semester}
           </span>
         </div>
       </div>

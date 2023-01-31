@@ -20,6 +20,7 @@ import StudentResults from "../student/pages/StudentResults/StudentResults";
 import StudentProfile from "../student/pages/StudentProfile/StudentProfile";
 import StudentCourses from "../student/pages/StudentCourses/StudentCourses";
 import StudentAttendance from "../student/pages/StudentAttendance/StudentAttendance";
+import StudentResultDetails from "../student/pages/StudentResults/StudentResultDetails";
 
 export default function Router() {
   return useRoutes([
@@ -47,6 +48,10 @@ export default function Router() {
         {
           path: "results",
           element: <StudentResults />,
+        },
+        {
+          path: "results/details",
+          element: <StudentResultDetails />,
         },
         {
           path: "profile",

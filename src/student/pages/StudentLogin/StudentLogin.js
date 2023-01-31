@@ -14,9 +14,9 @@ const StudentLogin = () => {
     axios
       .post(`http://localhost:4000/student/login`)
       .then((res1) => {
-        // localStorage.setItem("byoutakToken", res1.data.token);
+        localStorage.setItem("userId", Name);
         toast.success("Authentication Successful");
-        navigate("/student/dashboard", { state: Name });
+        navigate("/student/dashboard");
       })
       .catch((err) => toast.error("Not Authorized"));
   };

@@ -1,32 +1,17 @@
-const StudentResults = () => {
+const StudentResultDetails = () => {
   const resultList = [
     {
-      assesmenttype: "Assignment 1",
+      assesmenttype: "Assignment",
       totalMarks: 10,
       marksObtained: 8,
     },
     {
-      assesmenttype: "Assignment 2",
+      assesmenttype: "Assignment",
       totalMarks: 10,
       marksObtained: 7,
     },
     {
-      assesmenttype: "Assignment 3",
-      totalMarks: 10,
-      marksObtained: 8,
-    },
-    {
-      assesmenttype: "Quiz 1",
-      totalMarks: 10,
-      marksObtained: 8,
-    },
-    {
-      assesmenttype: "Quiz 2",
-      totalMarks: 10,
-      marksObtained: 7,
-    },
-    {
-      assesmenttype: "Quiz 3",
+      assesmenttype: "Assignment",
       totalMarks: 10,
       marksObtained: 8,
     },
@@ -65,5 +50,4 @@ const StudentResults = () => {
     </div>
   );
 };
-
-export default StudentResults;
+export default StudentResultDetails;

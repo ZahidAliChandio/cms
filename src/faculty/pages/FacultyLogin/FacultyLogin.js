@@ -14,9 +14,9 @@ const FacultyLogin = () => {
     axios
       .post(`http://localhost:4000/faculty/login`)
       .then((res1) => {
-        // localStorage.setItem("byoutakToken", res1.data.token);
+        localStorage.setItem("userId", Name);
         toast.success("Authentication Successful");
-        navigate("/faculty/dashboard", { state: Name });
+        navigate("/faculty/dashboard");
       })
       .catch((err) => toast.error("Not Authorized"));
   };
