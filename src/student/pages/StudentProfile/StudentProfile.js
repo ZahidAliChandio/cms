@@ -6,6 +6,7 @@ import Profile from "../../../shared/pages/Profile";
 
 const StudentProfile = () => {
   const [studentData, setStudentData] = useState(null);
+
   const getProfile = () => {
     axios
       .get(`${process.env.REACT_APP_ATLAS_URI}/profile`, {
@@ -26,6 +27,7 @@ const StudentProfile = () => {
         toast.error(err.message);
       });
   };
+
   useEffect(() => {
     getProfile();
   }, []);

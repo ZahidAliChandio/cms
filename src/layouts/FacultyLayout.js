@@ -9,9 +9,7 @@ const FacultyLayout = () => {
       <Navigation
         headerLeft={[
           { value: "Dashboard", link: "/faculty/dashboard" },
-          { value: "Profile", link: "" },
-          { value: "Results", link: "/faculty/results" },
-          { value: "Attendence", link: "/faculty/attendance" },
+          { value: "Profile", link: "/faculty/profile" },
           { value: "Courses", link: "/faculty/courses" },
         ]}
       />

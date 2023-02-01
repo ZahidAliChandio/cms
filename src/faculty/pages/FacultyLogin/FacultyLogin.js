@@ -12,7 +12,10 @@ const FacultyLogin = () => {
   const loginOperator = (e) => {
     e.preventDefault();
     axios
-      .post(`http://localhost:4000/faculty/login`)
+      .post(`http://localhost:4000/faculty/login`, {
+        userId: Name,
+        password: Password,
+      })
       .then((res1) => {
         localStorage.setItem("userId", Name);
         toast.success("Authentication Successful");
