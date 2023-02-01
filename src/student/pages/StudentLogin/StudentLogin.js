@@ -17,7 +17,7 @@ const StudentLogin = () => {
         password: Password,
       })
       .then((res) => {
-        if (res.statusText === "OK") {
+        if (res.status === 200) {
           localStorage.setItem("userId", Name);
           toast.success("Authentication Successful");
           navigate("/student/dashboard");

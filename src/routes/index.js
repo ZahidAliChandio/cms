@@ -25,6 +25,10 @@ import StudentResultDetails from "../student/pages/StudentResults/StudentResultD
 export default function Router() {
   return useRoutes([
     {
+      path: "/",
+      element: <StudentLogin />,
+    },
+    {
       path: "student",
       children: [
         {
