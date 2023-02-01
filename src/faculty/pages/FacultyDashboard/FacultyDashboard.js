@@ -5,11 +5,23 @@ import toast from "react-hot-toast";
 import Card from "../../../shared/components/UI/Card";
 import News from "../../../static/images/news.jpg";
 import Profile from "./Profile";
-import { useLocation } from "react-router-dom";
+
+import socketIO from "socket.io-client";
+
+const socket = socketIO.connect("http://localhost:4000");
 
 const Dashboard = () => {
   const [courses, setCourses] = useState(null);
   const [profileData, setProfileData] = useState(null);
+
+  const [news, setNews] = useState([]);
+
+  useEffect(() => {
+    //listens for the event list from the backend
+    socket.on("sendNews", (schedules) => {
+      setNews(schedules);
+    });
+  }, []);
 
   const getProfile = () => {
     axios
